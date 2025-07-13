@@ -1,0 +1,176 @@
+---
+title: "GHG reduction in cattle farming through manure management"
+author: "Greys Otiniano, Joan Lombard, Maria CHangezi, Miriam Uzun"
+date: "2025-07-05"
+output: 
+  html_document:
+  toc: true
+  toc_float: true
+#bibliography: bib/DA_25_File.bib
+
+---
+```{r, setup, include=FALSE, echo = FALSE, warning=FALSE}
+library(knitr)
+install.packages("DiagrammeR")
+library(DiagrammeR)
+library(ggplot2)
+library(dplyr)
+```
+
+## **TOPIC: REDUCING GHG EMISSIONS THROUGH MANURE MANAGEMENT IN CATTLE FARMS IN LAIKIPIA, KENYA**
+ 
+#### **Introduction**
+
+The livestock sector is a cornerstone of rural livelihoods and national food security in Kenya. However, prevailing production systems—characterized by extended animal rearing cycles, inefficient feeding, and informal marketing—contribute significantly to greenhouse gas (GHG) emissions and environmental degradation. These inefficiencies also undermine profitability for producers and create inconsistent supply for meat processors and retailers.
+
+In a 2023 UN-Report 11 % of global GHG emissions were attributed to the agricultural sector and 6% 
+directly to livestock keeping. @Olhoff.2024
+
+For this reason, there is a growing need to transition to more efficient, climate-smart livestock production systems. One high-potential opportunity is to shorten livestock holding periods through improved feeding, finishing, and offtake practices—reducing methane emissions while increasing returns for producers and processors.
+
+A meat processor aims to pioneer a contracted green beef production model, working directly with livestock producers and traders to encourage the supply of younger, better-finished animals. This model aligns with global shifts toward sustainable sourcing, low-carbon value chains, and inclusive business models.
+
+### **Decision question: Will the intervention lead to a significant reduction in GHGs and will the enterprise still be profitable for the farmer?**
+
+
+#### **Plan contents:**
+* optimized herd management 
+* methane capture from biogas-digesters 
+* utilization of manure as organic fertilizer
+* soil CO² sequencing (Animal density, pasture management)
+
+## **Stakeholders**
+
+```{r, Matrix, echo = FALSE, warning= FALSE}
+df <-data.frame ('Stakeholder group' = c('Farmer (Ranger)', 'NGOs', 'County Government of Laikipia (Livestock, Environment)', 'Kenya Agricultural & Livestock Research Organization (KALRO)', 'National Environmental Management Authority (NEMA)', 'Industry player(s)', 'Input suppliers (biogas tech, compost units)'), 
+                   'Role/Influence' = c('Decision maker', 'Technical and financial support', 'policy and enforcement', 'Techincal expertise', 'Regulatory support', 'cattle market', 'Technology provision'),
+                   'Category' = c('Primary', 'Supportive', 'Regulatory', 'Research', 'regulatory', 'Commercial', 'Commercial'))
+kable(df, caption = "Stakeholders")
+```
+
+## **Matrix**
+
+```{r, Matrix, echo = FALSE, warning= FALSE}
+df <-data.frame ('Criteria' = c('Greenhous gas', 'Soil health', 'Animal welfare', 'Income potential', 'Use of Synthetic fertilizer', 'Microclimate regulation', 'Happiness', 'Knowledge aquistion', 'Establishment cost', 'Time requirement'), 
+                   'Conventional Farming' = c('high', 'worse', 'poor', 'lower', 'high', 'poor', '?', 'low', 'low', 'low'),
+                   'Improved Farming' = c('lower', 'better', 'good', 'higher', 'low', 'better', '?', 'high', 'high', 'high'))
+kable(df, caption = "Comparing Conventional to Improved Farming")
+```
+
+
+## **Conceptual Model**
+
+In the following we present our Conceptual Model, which should help to illustrate the main aspects to reach our goal. The chart shows how manure management can lead to various benefits, including biogas generation, improved soil health, and reduced greenhouse gas emissions.
+
+```{r conceptual models, echo=FALSE, warning=FALSE}
+library(DiagrammeR)
+grViz("digraph{
+ 
+      graph[rankdir = LR ]
+  
+      node[shape = rectangle]
+  
+  node[fontcolor = Black, margin = 0.08, fontsize = 20, fontname = 'Helvetica' ]
+      A[label = 'Establishment cost']
+      B[label = 'Labour cost']
+      N[label = 'Management cost']
+      C[label = 'Total cost']
+      D[label = 'Reduced synthetic fertilizer']
+      E[label = 'Cattle profit']
+      F[label = 'Biogas profit']
+      G[label = 'Revenue']
+      H[label = 'Reduced GHG']
+      I[label = 'Carbon sequestration']     
+      J[label = 'Methane captured']
+      K[label = 'Sustainability']
+      L[label = 'Net Present Value ']
+      M[label = 'Improvement in Cattle Farming through Manure Management']
+
+      
+      edge[color = red, arrowhead = vee, arrowsize = 1.25]
+      M -> {A B N}
+      A -> C
+      B -> C
+      C -> L
+      N -> C
+
+      edge[color = DarkGreen, arrowhead = vee, arrowsize = 1.25]
+      M -> {D E F}
+      D -> G 
+      E -> G
+      F -> G
+      M -> {H I J}
+      H -> K
+      I -> K 
+      J -> K
+       }")
+```
+
+
+## **Unsertainties/ Risks**
+
+* Is the generated Biogas enough for a substitution?
+* Biogas generation - implementation and establishment?
+* Organic fertilizer - how high the quality? Is soil health really going to improve?
+* Depending on the organic fertilizer and soil health - is a reduction of synthetic fertilizer realistic?
+* Safety level of using the manure: it may contain pathogens, volatile organic compounds, heavy metals, and / or antibiotics
+* If the changes (reductions) are going to be significant? (I don't know if this is relevant)
+* Excess nutrient in ground and surface water
+
+## **Impact Pathways**
+
+* reduced GHG
+* Better soil health
+* increased income
+* reduced synthetic fertilizer
+* Improved microclimate
+
+
+## **Causal Model**
+```{r causualmodel, echo=FALSE, warning= FALSE}
+library(DiagrammeR)
+grViz("digraph{
+ 
+      graph[rankdir = TB ]
+  
+      node[shape = ellipse]
+  
+  node[fontcolor = Black, fillcolor = Pink, margin = 0.08, fontsize = 20, fontname = 'Helvetica' ]
+      A[label = 'Manure Management']
+      B[label = 'Reduced CH4 Emission']
+      C[label = 'Biogas Production']
+      D[label = 'Organic Fertilizer']
+      E[label = 'Mineral leaching']
+      F[label = 'Water pollution']
+      G[label = 'Reduced fossil fuel']
+      H[label = 'Reduced synthetic fertilizer']
+      I[label = 'Soil Health']     
+      J[label = 'Carbon Sequestration']
+      K[label = 'Reduced GHG emission']
+      L[label = 'Increased income']
+      M[label = 'Healthier plants']
+      N[label = 'Improved Microclimate']
+      
+      edge[color = black, arrowhead = vee, arrowsize = 1.25]
+    A -> {B C D}
+      B -> K
+      C -> {G L}
+      D -> {H I}
+   G -> {K L}
+      H -> {K L}   
+      I -> {M J N}
+      M -> {L}
+      H -> K
+      G -> {I J}
+            
+      edge[color = red, arrowhead = vee, arrowsize = 1.25]
+      D -> E  
+      E -> F
+      
+      
+      }")
+
+```
+
+
+# References
