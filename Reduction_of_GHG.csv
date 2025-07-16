@@ -1,0 +1,19 @@
+variable;lower;upper;distribution;Unit;description
+n_years;15;15;const;;Number of years
+Establishment_labour_cost;1200;17800;posnorm;USD;Labour cost for establishment 
+Infrastructure_establishment_cost;9280;46400;posnorm;USD;Infrastructure cost for establishment
+Labour_cost;540;24000;posnorm;USD/year;Cost of labour
+Management_cost;1200;6500;posnorm;USD/year;Cost of management 
+cattle_profit;716,7;833,3;posnorm;USD/cow;Profit from cattle
+Biogas_Profit;3555;178500;posnorm;USD/year;Profit from biogas
+Number_of_Cattle;20;1000;posnorm;Per farm size;Number of cattles per farm size
+Quantity_of _biogas;2044;102200;posnorm;cubic meters/year;Amount of biogas
+Quantity _of_raw_manure;10;30;posnorm;kg/day/cow;Amount of manure 
+Land_size;200;10000;posnorm;ha;size of land
+fossil_fuel_equivalent;880;43946;posnorm;kg/year;Fossil fuel equivalent 
+Fertilizer_value_from_slurry;151;7555;posnorm;USD/year;Value of fertilizer from slurry
+Land_applied_Manure;87,6;4380;posnorm;tons/year;Manure on land
+quantity_of_slurry;58,4;2920;posnorm;tons/year;Amount of slurry
+Carbon_Sequerstered_from_Manure;1,52;767;posnorm;tC/year;Sequestered carbon from manure 
+Carbon_Sequestered_from_Slurry;0,045;2,24;posnorm;tC/year;Sequestered carbon from slurry
+Methane_captured_from_biogas_generation;1226;61320;posnorm;cubic meters/year;Methane captured from biogas generation
